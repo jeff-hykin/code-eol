@@ -1,5 +1,5 @@
 ### What is this?
-This is an extension to display EOL (new line) characters in your code, like Atom or Notepad++
+This extension display EOL (new line) characters, similar to Atom or Notepad++ are able to.
 
 ### Settings
 In vs code settings you can add:
@@ -9,7 +9,7 @@ In vs code settings you can add:
         "code-eol.returnCharacter":"↵",
         "code-eol.crlfCharacter"  :"←",
 ```
-[[https://github.com/jeff-hykin/code-eol/blob/master/'Screen Shot 2018-05-07 at 11.41.35 PM.png']]
+<img width="376" src="https://github.com/jeff-hykin/code-eol/blob/master/Screen Shot 2018-05-07 at 11.41.35 PM.png">
 
 This will (obviously) set the color, along with the characters for each of the return types.
 
