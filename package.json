@@ -26,30 +26,42 @@
 		"@types/node": "7.0.4"
 	},
 	"dependencies": {
-		"vsce": "^1.36.2"
+		"vsce": "^1.40.0"
 	},
 	"contributes": {
-		"configuration":[
+		"configuration": [
 			{
 				"type": "object",
 				"title": "code-eol Configuration",
 				"properties": {
 					"code-eol.color": {
-						"type": ["string", "null"],
+						"type": [
+							"string",
+							"null"
+						],
 						"default": null
 					},
 					"code-eol.newlineCharacter": {
-						"type": ["string", "null"],
+						"type": [
+							"string",
+							"null"
+						],
 						"default": null
 					},
 					"code-eol.returnCharacter": {
-						"type": ["string", "null"],
+						"type": [
+							"string",
+							"null"
+						],
 						"default": null
 					},
 					"code-eol.crlfCharacter": {
-						"type": ["string", "null"],
+						"type": [
+							"string",
+							"null"
+						],
 						"default": null
-					},
+					}
 				}
 			}
 		]
