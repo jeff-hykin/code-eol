@@ -2,7 +2,7 @@
 	"name": "code-eol",
 	"displayName": "code-eol",
 	"description": "Display newline characters in your code",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"publisher": "jeff-hykin",
 	"repository": {
 		"url": "https://github.com/jeff-hykin/code-eol"
