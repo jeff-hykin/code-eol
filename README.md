@@ -9,7 +9,7 @@ In vs code settings you can add:
         "code-eol.returnCharacter":"↵",
         "code-eol.crlfCharacter"  :"←",
 ```
-[[https://github.com/jeff-hykin/code-eol/blob/master/Screen Shot 2018-05-07 at 11.41.35 PM.png]]
+[[https://github.com/jeff-hykin/code-eol/blob/master/'Screen Shot 2018-05-07 at 11.41.35 PM.png']]
 
 This will (obviously) set the color, along with the characters for each of the return types.
 
