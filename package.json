@@ -2,10 +2,10 @@
 	"name": "code-eol",
 	"displayName": "code-eol",
 	"description": "Display newline characters in your code",
-	"version": "0.2.3",
-	"publisher": "sohamkamani",
+	"version": "0.3.0",
+	"publisher": "jeff-hykin",
 	"repository": {
-		"url": "https://github.com/sohamkamani/code-eol"
+		"url": "https://github.com/jeff-hykin/code-eol"
 	},
 	"license": "MIT",
 	"engines": {
@@ -19,14 +19,10 @@
 	],
 	"main": "./out/extension",
 	"scripts": {
-		"vscode:prepublish": "npm run compile",
-		"compile": "/Users/soham/go/src/github.com/sohamkamani/vscode-eol/node_modules/typescript/bin/tsc -p ./",
-		"watch": "tsc -watch -p ./",
 		"postinstall": "node ./node_modules/vscode/bin/install"
 	},
 	"devDependencies": {
 		"vscode": "^1.1.5",
-		"typescript": "^2.5.3",
 		"@types/node": "7.0.4"
 	},
 	"dependencies": {
@@ -41,7 +37,19 @@
 					"code-eol.color": {
 						"type": ["string", "null"],
 						"default": null
-					}
+					},
+					"code-eol.newlineCharacter": {
+						"type": ["string", "null"],
+						"default": null
+					},
+					"code-eol.returnCharacter": {
+						"type": ["string", "null"],
+						"default": null
+					},
+					"code-eol.crlfCharacter": {
+						"type": ["string", "null"],
+						"default": null
+					},
 				}
 			}
 		]
