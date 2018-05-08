@@ -1,17 +1,23 @@
-## VS Code EOL
+### What is this?
+This is an extension to display EOL (new line) characters in your code, like Atom or Notepad++
 
-This is an extension to display EOL (new line) characters in your code.
+### Settings
+In vs code settings you can add:
+```
+        "code-eol.color":"#2a3f47",
+        "code-eol.newlineCharacter":"¬",
+        "code-eol.returnCharacter":"↵",
+        "code-eol.crlfCharacter"  :"←",
+```
+[[https://github.com/jeff-hykin/code-eol/blob/master/Screen Shot 2018-05-07 at 11.41.35 PM.png]]
+This will (obviously) set the color, along with the characters for each of the return types.
 
-Supports `\n`, `\r\n`, and `\r` returns
+### Credit
+This is an updated/improved fork of https://github.com/sohamkamani/code-eol
 
-**Sample with LF**
-
-![sample](sample.png)
-
-**Sample with CRLF**
-
-![sample](sample_cl.png)
-
-## Settings
-
-`code-eol.color` - Choose the color for displaying the EOL character. Defaults to the current theme color. (Example: `"code-eol.color":"#F00"`)
+### Whats improved?
+This fork:
+1. Fixes the character bounce issue when typing at the end of a line 
+2. Adds the ability to pick the characters that represent the newline/return character
+3. Improves performance
+4. adds more comments/documentation
