@@ -1,5 +1,5 @@
 ### What is this?
-This extension display EOL (new line) characters, similar to Atom or Notepad++ are able to.
+This extension displays EOL (new line) characters, similar to Atom or Notepad++ are able to.
 
 ### Settings
 In vs code settings you can add:
