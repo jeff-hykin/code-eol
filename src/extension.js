@@ -9,12 +9,12 @@ function activate(context) {
     const decorationColor = configuration.color
     // get characters at start
     const newline_char = configuration.newlineCharacter ? configuration.newlineCharacter : '↓'
-    const return_char  = configuration.returnCharacter  ? configuration.returnCharacter  : '↵'
-    const crlf_char    = configuration.crlfCharacter    ? configuration.crlfCharacter    : '←'
+    const return_char  = configuration.returnCharacter  ? configuration.returnCharacter  : '←'
+    const crlf_char    = configuration.crlfCharacter    ? configuration.crlfCharacter    : '↵'
     // init some vars outside of updateDecorations for efficiency
     const render_newline = { after: { contentText: newline_char, color: decorationColor } }
-    const render_crlf    = { after: { contentText: return_char, color : decorationColor } }
-    const render_return  = { after: { contentText: crlf_char, color   : decorationColor } }
+    const render_return  = { after: { contentText: return_char, color : decorationColor } }
+    const render_crlf    = { after: { contentText: crlf_char, color   : decorationColor } }
     const render_blank   = { after: { contentText: '', color          : decorationColor } }
     var match
     var the_render_option
