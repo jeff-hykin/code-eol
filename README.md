@@ -4,7 +4,7 @@ This extension displays end-of-line (newline) characters, similar to how Atom or
 ### Settings/Config Options
 In vs code settings you can add:
 ```
-        "code-eol.color":"#2a3f47",
+        "code-eol.color"  :"#2a3f47",
         "code-eol.newlineCharacter":"¬",
         "code-eol.returnCharacter":"↵",
         "code-eol.crlfCharacter"  :"←",
@@ -15,7 +15,7 @@ This will (obviously) set the color, along with the characters for each of the r
 
 ### Credit
 This is an updated/improved fork of https://github.com/sohamkamani/code-eol
-If there are bugs create an issue on github: https://github.com/jeff-hykin/code-eol
+If there are bugs/complaints create an issue on github: https://github.com/jeff-hykin/code-eol
 I plan to actively maintain this extension, and will definitiely accept push requests for improvements.
 
 ### Whats improved?
