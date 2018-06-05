@@ -4,13 +4,18 @@ var vscode = require("vscode");
 
 // this method is called when vs code is activated
 function activate(context) {
-    // get color at start
     const configuration = vscode.workspace.getConfiguration('code-eol')
-    const decorationColor = configuration.color
-    // get characters at start
-    const newline_char = configuration.newlineCharacter ? configuration.newlineCharacter : '↓'
-    const return_char  = configuration.returnCharacter  ? configuration.returnCharacter  : '←'
-    const crlf_char    = configuration.crlfCharacter    ? configuration.crlfCharacter    : '↵'
+    const defaultValues = {
+        color           : '#9e9e9e', // gray
+        newlineCharacter: '↓',
+        returnCharacter : '←',
+        crlfCharacter   : '↵',
+    }
+    // set color and characters at start
+    const decorationColor = configuration.color            ? configuration.color            : defaultValues.color
+    const newline_char    = configuration.newlineCharacter ? configuration.newlineCharacter : defaultValues.newlineCharacter
+    const return_char     = configuration.returnCharacter  ? configuration.returnCharacter  : defaultValues.returnCharacter
+    const crlf_char       = configuration.crlfCharacter    ? configuration.crlfCharacter    : defaultValues.crlfCharacter
     // init some vars outside of updateDecorations for efficiency
     const render_newline = { after: { contentText: newline_char, color: decorationColor } }
     const render_return  = { after: { contentText: return_char, color : decorationColor } }
