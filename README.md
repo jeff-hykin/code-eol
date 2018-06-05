@@ -6,25 +6,25 @@ You can customize the color and character of each kind of end-of-line character:
 ```
         "code-eol.color"  :"#2a3f47",
         "code-eol.newlineCharacter":"¬",
-        "code-eol.returnCharacter" :"⇣",
+        "code-eol.returnCharacter" :"⇠",
         "code-eol.crlfCharacter"   :"↵",
         // some other symbols you might want to use:
-            // ¶
-            // ␤
+            // ↓
             // ←
-            // ⇠
-            // ⇐
-            // ◀
             // ↙
+            // ⇣
+            // ⇠
+            // ⇓
+            // ⇐
+            // ▼
+            // ◀
+            // ␤
+            // ¶
             // ↲
             // ↩
             // ↴
             // ⬎
-            // ↓
-            // ⇣
-            // ⇓
             // ⇂
-            // ▼
         // see more at https://unicode-table.com/en/sets/arrows-symbols/
 ```
 <img width="376" src="https://github.com/jeff-hykin/code-eol/blob/master/Screen Shot 2018-05-07 at 11.41.35 PM.png">
