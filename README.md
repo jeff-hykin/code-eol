@@ -3,6 +3,7 @@ This shows newline (technically end-of-line) characters, similar to how Atom or 
 
 ### What can I customize? (Settings)
 You can customize the color and character of each kind of end-of-line character:
+NOTE: Make sure to reload VS Code after changing settings for them to take effect
 ```
         "code-eol.color"  :"#2a3f47",
         "code-eol.newlineCharacter":"¬",
