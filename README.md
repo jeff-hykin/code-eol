@@ -42,7 +42,7 @@ This fork:
 4. Adds more comments/documentation
 
 # What if there is a problem with the extension?
-If there are bugs/complaints create an issue on github: https://github.com/jeff-hykin/code-eol
-If anyone thinks they know how to improve the speed/efficiency, there is a lot of room for improvement!
-I plan to actively maintain this extension, and I'll continue accepting push requests for improvements. (Although it may take me a few days to see the push request)
+If there are bugs/complaints create an issue on github: https://github.com/jeff-hykin/code-eol<br>
+I plan to actively maintain this extension, and I'll continue accepting push requests for improvements. (Although it may take me a few days to see the push request)<br>
+If anyone thinks they know how to improve the speed/efficiency, there is a lot of room for improvement! I'd be happy to merge push requests for efficiency.
 
