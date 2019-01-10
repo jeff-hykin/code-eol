@@ -1,69 +1,74 @@
 {
-	"name": "code-eol",
-	"displayName": "code-eol-2018",
-	"description": "Display newline characters like Atom/Notepad",
-	"version": "0.3.7",
-	"publisher": "jeff-hykin",
-	"repository": {
-		"url": "https://github.com/jeff-hykin/code-eol"
-	},
-	"license": "MIT",
-	"engines": {
-		"vscode": "^1.15.0"
-	},
-	"categories": [
-		"Other"
-	],
-	"activationEvents": [
-		"*"
-	],
-	"main": "./out/extension",
-	"scripts": {
-		"postinstall": "node ./node_modules/vscode/bin/install"
-	},
-	"devDependencies": {
-		"vscode": "^1.1.5",
-		"@types/node": "7.0.4"
-	},
-	"dependencies": {
-		"vsce": "^1.40.0"
-	},
-	"contributes": {
-		"configuration": [
-			{
-				"type": "object",
-				"title": "code-eol Configuration",
-				"properties": {
-					"code-eol.color": {
-						"type": [
-							"string",
-							"null"
-						],
-						"default": null
-					},
-					"code-eol.newlineCharacter": {
-						"type": [
-							"string",
-							"null"
-						],
-						"default": null
-					},
-					"code-eol.returnCharacter": {
-						"type": [
-							"string",
-							"null"
-						],
-						"default": null
-					},
-					"code-eol.crlfCharacter": {
-						"type": [
-							"string",
-							"null"
-						],
-						"default": null
-					}
-				}
-			}
-		]
-	}
+    "name": "code-eol",
+    "displayName": "code-eol-2019",
+    "description": "Display newline characters like Atom/Notepad",
+    "version": "0.3.8",
+    "publisher": "jeff-hykin",
+    "repository": {
+        "url": "https://github.com/jeff-hykin/code-eol"
+    },
+    "license": "MIT",
+    "engines": {
+        "vscode": "^1.15.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./index",
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "publish": "vsce package && vsce publish"
+    },
+    "devDependencies": {
+        "vscode": "^1.1.5",
+        "@types/node": "7.0.4"
+    },
+    "dependencies": {
+        "tmp": "0.0.29",
+        "vsce": "^1.40.0"
+    },
+    "contributes": {
+        "configuration": [
+            {
+                "type": "object",
+                "title": "code-eol Configuration",
+                "properties": {
+                    "code-eol.style": {
+                        "type": [
+                            "object"
+                        ],
+                        "default": {},
+                        "description": "The CSS style of the character: color, opacity, etc. See ThemableDecorationAttachmentRenderOptions on https://goo.gl/SYzyg8 for more options"
+                    },
+                    "code-eol.newlineCharacter": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "default": "↓",
+                        "description": "Which character is shown for newline-ending ex:¬"
+                    },
+                    "code-eol.returnCharacter": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "default": "↵",
+                        "description": "Which character is shown for carriage-return-ending ex:¬"
+                    },
+                    "code-eol.crlfCharacter": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "default": "←",
+                        "description": "Which character is shown for crlf-ending ex:¬"
+                    }
+                }
+            }
+        ]
+    }
 }
