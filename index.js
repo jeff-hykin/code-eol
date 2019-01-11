@@ -81,6 +81,9 @@ function updateDecorations(editor) {
     // if somehow there is no active editor, then just return
     if (!activeEditor) { return }
     
+    // if this called by onDidChangeTextDocument(), 
+    // then the text string will only be the text that changed
+    // (it wont be the text of the entire file)
     const document = activeEditor.document
     const text = document.getText()
     const newLines = []

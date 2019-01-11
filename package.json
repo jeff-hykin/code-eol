@@ -1,8 +1,8 @@
 {
     "name": "code-eol",
-    "displayName": "code-eol-2019",
+    "displayName": "code-eol 2019 (Line Endings)",
     "description": "Display newline characters like Atom/Notepad",
-    "version": "0.3.8",
+    "version": "0.4.1",
     "publisher": "jeff-hykin",
     "repository": {
         "url": "https://github.com/jeff-hykin/code-eol"
@@ -41,7 +41,7 @@
                             "object"
                         ],
                         "default": {},
-                        "description": "The CSS style of the character: color, opacity, etc. See ThemableDecorationAttachmentRenderOptions on https://goo.gl/SYzyg8 for more options"
+                        "description": "The CSS style (color, opacity, etc) of the line ending characters. Ex: \"code-eol.style\" { \"color\" : \"#2a3f47\", \"opacity\" : 1.0 }"
                     },
                     "code-eol.newlineCharacter": {
                         "type": [
