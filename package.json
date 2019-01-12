@@ -2,7 +2,7 @@
     "name": "code-eol",
     "displayName": "code-eol 2019 (Line Endings)",
     "description": "Display newline characters like Atom/Notepad",
-    "version": "0.4.2",
+    "version": "0.4.3",
     "icon": "icon.png",
     "publisher": "jeff-hykin",
     "repository": {
@@ -21,7 +21,7 @@
     "main": "./index",
     "scripts": {
         "postinstall": "node ./node_modules/vscode/bin/install",
-        "publish": "vsce package && vsce publish"
+        "publish": "vsce package && vsce publish && rm *.vsix"
     },
     "devDependencies": {
         "vscode": "^1.1.5",
