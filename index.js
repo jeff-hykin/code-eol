@@ -30,7 +30,7 @@ exports.activate = function activate(context) {
     // import stuff from settings.json
     // 
     let { style, newlineCharacter, returnCharacter, crlfCharacter, color } = vscode.workspace.getConfiguration('code-eol')
-    // make style ediable (by default it is read only when its imported from settings)
+    // make style editable (by default it is read only when its imported from settings)
     style = {...style}
 
     // 

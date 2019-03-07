@@ -2,7 +2,7 @@
     "name": "code-eol",
     "displayName": "code-eol 2019 (Line Endings)",
     "description": "Display newline characters like Atom/Notepad",
-    "version": "0.4.3",
+    "version": "0.4.4",
     "icon": "icon.png",
     "publisher": "jeff-hykin",
     "repository": {
@@ -12,6 +12,14 @@
     "engines": {
         "vscode": "^1.15.0"
     },
+    "keywords": [
+        "eol",
+        "lf",
+        "crlf",
+        "end-of-line",
+        "line ending",
+        "line endings"
+    ],
     "categories": [
         "Other"
     ],
