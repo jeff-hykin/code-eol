@@ -2,11 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true })
 const vscode = require("vscode")
 
-
 // 
 // init vars
 //
 let isDisabled = null
+let whitespaceWasActive = null
 // create a mainDecoration with nothing in it because we're not actually decorating any existing text 
 // instead we're finding end-of-lines, then adding something after them, and then decorating that "something-after" thing
 const mainDecoration = vscode.window.createTextEditorDecorationType({})
@@ -23,43 +23,104 @@ let renderCrlf
 let renderBlank
 
 // 
-// this method is called when vs code is initally opened
-// 
-exports.activate = function activate(context) {
-    // 
+// Update colors
+//
+function updateSettings() {
+    //
     // import stuff from settings.json
-    // 
-    let { style, newlineCharacter, returnCharacter, crlfCharacter, color } = vscode.workspace.getConfiguration('code-eol')
+    //
+    let {
+        style,
+        newlineCharacter,
+        newlineCharacterStyle,
+        returnCharacter,
+        returnCharacterStyle,
+        crlfCharacter,
+        crlfCharacterStyle,
+        validLineEnding,
+        toggleWithWhiteSpace,
+    } = vscode.workspace.getConfiguration('code-eol')
+    let whitespaceIsBeingRendered = vscode.workspace.getConfiguration('editor', null).get('renderWhitespace', false) != 'none'
     // make style editable (by default it is read only when its imported from settings)
-    style = {...style}
+    style = {
+        // set default color to be the color of whitespace
+        color: new vscode.ThemeColor('editorWhitespace.foreground'),
+        ...style
+    }
 
     // 
-    // check if the user is using the old color method
+    // Check for non-default line endings
     // 
-    if (color) {
-        // show a message to the user
-        vscode.window.showWarningMessage(`Hey! Take 5 seconds to change your code-eol settings. Change "code-eol.color":"${color}" to "code-eol.style":{ "color": "${color}", "opacity": 1.0 } instead`)
-        // put the color in the style object so that the old method still works
-        style.color = color
+    if (validLineEnding != null) {
+        const themeErrorColor = new vscode.ThemeColor('errorForeground')
+        if (validLineEnding == 'LF') {
+            crlfCharacterStyle   = { color: themeErrorColor, ...crlfCharacterStyle  }
+            returnCharacterStyle = { color: themeErrorColor, ...returnCharacterStyle}
+        } else if (validLineEnding == 'CRLF') {
+            newlineCharacterStyle = { color: themeErrorColor, ...newlineCharacterStyle}
+            returnCharacterStyle  = { color: themeErrorColor, ...returnCharacterStyle }
+        }
     }
 
     // convert opacity into a string (not sure why it fails when its a number)
-    if (typeof style.opacity == "number") {
-        style.opacity = `${style.opacity}`
-    }
-
-    // set the style/look/decoration of each line ending
-    renderNewline = { after: { contentText: newlineCharacter, ...style } }
-    renderReturn  = { after: { contentText: crlfCharacter   , ...style } }
-    renderCrlf    = { after: { contentText: returnCharacter , ...style } }
-    renderBlank   = { after: { contentText: ''              , ...style } }
+    if (typeof style.opacity == "number") { style.opacity = `${style.opacity}` }
+    newlineCharacterStyle = {...newlineCharacterStyle}; if (typeof newlineCharacterStyle.opacity == "number") { newlineCharacterStyle.opacity = `${newlineCharacterStyle .opacity}` }
+    returnCharacterStyle  = {...returnCharacterStyle }; if (typeof returnCharacterStyle .opacity == "number") { returnCharacterStyle .opacity = `${returnCharacterStyle  .opacity}` }
+    crlfCharacterStyle    = {...crlfCharacterStyle   }; if (typeof crlfCharacterStyle   .opacity == "number") { crlfCharacterStyle   .opacity = `${crlfCharacterStyle    .opacity}` }
     
+    // set the style/look/decoration of each line ending
+    renderNewline = { after: { contentText: newlineCharacter, ...style, ...newlineCharacterStyle } }
+    renderReturn  = { after: { contentText: returnCharacter , ...style, ...returnCharacterStyle  } }
+    renderCrlf    = { after: { contentText: crlfCharacter   , ...style, ...crlfCharacterStyle    } }
+    renderBlank   = { after: { contentText: ''              , ...style,                 } }
+    
+    // 
+    // Check for change in showing whitespace (check for if it should be toggled)
+    // 
+    if (whitespaceWasActive != whitespaceIsBeingRendered) {
+        // save change to perisitant storage
+        whitespaceWasActive = !whitespaceWasActive
+        if (globalState) {
+            globalState.update("whitespaceWasActive", whitespaceWasActive)
+        }
+        // if user has setting enabled
+        if (toggleWithWhiteSpace) {
+            if (whitespaceIsBeingRendered) {
+                isDisabled = false
+            } else {
+                isDisabled = true
+            }
+            if (globalState) {
+                globalState.update("codeEolIsDisabled", isDisabled)
+            }
+        }
+    }
+} 
+
+
+// 
+// this method is called when vs code is initally opened
+// 
+exports.activate = function activate(context) {
     // set the active editor
     activeEditor = vscode.window.activeTextEditor
     // set the globalState
     globalState = context.globalState
     // get the isDisabled setting
-    isDisabled = context.globalState.get("codeEolIsDisabled")
+    isDisabled          = context.globalState.get("codeEolIsDisabled")
+    whitespaceWasActive = context.globalState.get("whitespaceWasActive")
+    let isRunningV1     = context.globalState.get("isRunningV1")
+
+
+    updateSettings()
+    
+    // update message for v1
+    if (isRunningV1 != true) {
+        vscode.window.showInformationMessage('Hey! The big update to code-eol might break the look of your line-endings. Check the extension homepage for more details')
+        if (globalState) {
+            globalState.update("isRunningV1", true)
+        }
+    }
 
     // 
     // bind updateDecorations()
@@ -70,6 +131,14 @@ exports.activate = function activate(context) {
     vscode.workspace.onDidChangeTextDocument(()=>updateDecorations(), null, context.subscriptions)
     // updateDecorations when the editor changes (aka new tab)
     vscode.window.onDidChangeActiveTextEditor(updateDecorations, null, context.subscriptions)
+
+    // 
+    // when the user changes settings, update the color varaibles
+    // 
+    vscode.workspace.onDidChangeConfiguration(() => {
+        updateSettings()
+        updateDecorations()
+    }, null, context.subscriptions)
 }
 
 // 

@@ -2,7 +2,7 @@
     "name": "code-eol",
     "displayName": "code-eol 2019 (Line Endings)",
     "description": "Display newline characters like Atom/Notepad",
-    "version": "0.4.4",
+    "version": "1.0.0",
     "icon": "icon.png",
     "publisher": "jeff-hykin",
     "repository": {
@@ -16,6 +16,10 @@
         "eol",
         "lf",
         "crlf",
+        "whitespace",
+        "render whitespace",
+        "render crlf",
+        "render endings",
         "end-of-line",
         "line ending",
         "line endings"
@@ -45,6 +49,21 @@
                 "type": "object",
                 "title": "code-eol Configuration",
                 "properties": {
+                    "code-eol.toggleWithWhiteSpace" : {
+                        "type": [
+                            "boolean"
+                        ],
+                        "default": true,
+                        "description": "If true, then showing/hiding whitespace in VS Code will also show/hide the line endings"
+                    },
+                    "code-eol.validLineEnding" : {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "default": null,
+                        "description": "Set this to either CRLF or LF, and then non-CRLF (or non-LF) will be highlighted as an error to notify you of a non-standard line ending"
+                    },
                     "code-eol.style": {
                         "type": [
                             "object"
@@ -57,8 +76,15 @@
                             "string",
                             "null"
                         ],
-                        "default": "↓",
+                        "default": "¬",
                         "description": "Which character is shown for newline-ending ex:¬"
+                    },
+                    "code-eol.newlineCharacterStyle": {
+                        "type": [
+                            "object"
+                        ],
+                        "default": {},
+                        "description": "You can set the style (color, opacity, etc) for this ending specifically"
                     },
                     "code-eol.returnCharacter": {
                         "type": [
@@ -68,6 +94,13 @@
                         "default": "↵",
                         "description": "Which character is shown for carriage-return-ending ex:¬"
                     },
+                    "code-eol.returnCharacterStyle": {
+                        "type": [
+                            "object"
+                        ],
+                        "default": {},
+                        "description": "You can set the style (color, opacity, etc) for this ending specifically"
+                    },
                     "code-eol.crlfCharacter": {
                         "type": [
                             "string",
@@ -75,6 +108,13 @@
                         ],
                         "default": "←",
                         "description": "Which character is shown for crlf-ending ex:¬"
+                    },
+                    "code-eol.crlfCharacterStyle": {
+                        "type": [
+                            "object"
+                        ],
+                        "default": {},
+                        "description": "You can set the style (color, opacity, etc) for this ending specifically"
                     }
                 }
             }
