@@ -5,3 +5,7 @@ typings/**
 .gitignore
 tsconfig.json
 vsc-extension-quickstart.md
+node_modules
+.cache
+node_modules/
+.cache/
