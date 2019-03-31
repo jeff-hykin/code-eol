@@ -1,5 +1,7 @@
 # What is this?
-This shows newline (technically end-of-line) characters, similar to how Atom or Notepad++ do.
+This shows newline (technically end-of-line) characters, similar to how Atom or Notepad++ do. There's also the option to show non-standard line endings as a seperate color.
+
+Just install it, and open a file.
 
 # I just updated to V1, What's different?
 - The "returnCharacter" and "crlfCharacter" settings were accidently (originally) switched, V1 corrects that mistake but it might make your endings look different.
@@ -38,6 +40,7 @@ Settings Example:
             opacity: 0.9
         },
         // some other symbols you might want to use:
+            // ¤
             // ↓
             // ←
             // ↙
