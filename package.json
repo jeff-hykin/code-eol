@@ -2,7 +2,7 @@
     "name": "code-eol",
     "displayName": "code-eol 2019 (Line Endings)",
     "description": "Display newline characters like Atom/Notepad",
-    "version": "1.0.3",
+    "version": "1.0.5",
     "icon": "icon.png",
     "publisher": "jeff-hykin",
     "repository": {

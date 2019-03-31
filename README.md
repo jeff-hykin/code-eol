@@ -1,17 +1,16 @@
 # What is this?
 This shows newline (technically end-of-line) characters, similar to how Atom or Notepad++ do.
 
-# I just updated to V1, what's different?
+# I just updated to V1, What's different?
 - The "returnCharacter" and "crlfCharacter" settings were accidently (originally) switched, V1 corrects that mistake but it might make your endings look different.
 - The default color is now the color of your theme whitespace!
 - The default line ending for "newlineCharacter" was changed to "¬"
-- Toggle line endings by toggling whitespace! (Enabled by default, but can be disabled)
-- Set your prefered line ending with "code-eol.validLineEnding", this will color non-valid as errors
-- Ending-specific styles. For example use "code-eol.newlineCharacterStyle" to set the color, opacity, etc (see "ThemableDecorationAttachmentRenderOptions" on https://goo.gl/SYzyg8) for individual endings
+- The line endings are now toggled whenever "show whitespace" is toggled! (Enabled by default, but this behavior can be disabled)
+- Set your prefered line ending with "code-eol.validLineEnding", this will color other endings an error-color
+- Ending-specific styles are added. For example, for newline, use "code-eol.newlineCharacterStyle" to set the color, opacity, etc (see "ThemableDecorationAttachmentRenderOptions" on https://goo.gl/SYzyg8) 
 
 # What can I customize? (Settings)
-You can customize the color, opacity, and which character is used for each kind of end-of-line.<br>
-NOTE: after changing a setting, reload vs code for them to take effect. (This is done for performance reasons, but will hopefully will be changed in the future)<br>
+You can customize the color, opacity, which character is used for each kind of end-of-line, and a few other things.<br>
 Settings Example:
 ```
         "code-eol.style" {
@@ -22,6 +21,7 @@ Settings Example:
         },
         // "code-eol.validLineEnding": "LF"  , // (optional) this makes "CRLF" endings render as error-color
         // "code-eol.validLineEnding": "CRLF", // (optional) this makes "LF" endings render as error-color
+        "code-eol.toggleWithWhiteSpace": true,
         "code-eol.newlineCharacter":"¬",
         "code-eol.returnCharacter" :"⇠",
         "code-eol.crlfCharacter"   :"↵",
@@ -59,7 +59,7 @@ Settings Example:
 <!-- <img width="376" src="https://github.com/jeff-hykin/code-eol/blob/master/Screen Shot 2018-05-07 at 11.41.35 PM.png"> -->
 
 # Can I toggle line endings with a keybinding?
-Yes! There is no default keybinding, but there is a "Toggle (Show/Hide) Line Endings" command that you can use from the command pallet, and you can add a keybinding that maps to it.
+Yes! By default the line endings are toggled along with the "show whitespace" setting. There is also a command (with no default keybinding) called "Toggle (Show/Hide) Line Endings" you can use from the command pallet, and you can add a keybinding that maps to it. That command will manually toggle line endings indepent of the show whitespace setting.
 
 # You programmed this yourself?
 Nope, the only reason this exists is because its updated/improved fork of https://github.com/sohamkamani/code-eol
@@ -72,6 +72,7 @@ This fork:
 3. Improves performance
 4. Adds more comments/documentation
 5. Adds toggle command for turning visible line endings on/off
+6. Uses the default colors of your theme
 
 # What if there is a problem with the extension?
 Then post a bug/feature request!<br>
