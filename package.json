@@ -2,11 +2,12 @@
     "name": "code-eol",
     "displayName": "code-eol 2019 (Line Endings)",
     "description": "Display newline characters like Atom/Notepad",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "icon": "icon.png",
     "publisher": "jeff-hykin",
     "repository": {
-        "url": "https://github.com/jeff-hykin/code-eol"
+        "url": "https://github.com/jeff-hykin/code-eol",
+        "build" : "parcel bulid index.js -t electron"
     },
     "license": "MIT",
     "engines": {
@@ -30,7 +31,7 @@
     "activationEvents": [
         "*"
     ],
-    "main": "./index",
+    "main": "./dist/index",
     "scripts": {
         "postinstall": "node ./node_modules/vscode/bin/install",
         "publish": "vsce package && vsce publish && rm *.vsix"
