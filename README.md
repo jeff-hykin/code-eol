@@ -62,7 +62,7 @@ Settings Example:
 <!-- <img width="376" src="https://github.com/jeff-hykin/code-eol/blob/master/Screen Shot 2018-05-07 at 11.41.35 PM.png"> -->
 
 # Can I toggle line endings with a keybinding?
-Yes! By default the line endings are toggled along with the "show whitespace" setting. There is also a command (with no default keybinding) called "Toggle (Show/Hide) Line Endings" you can use from the command pallet, and you can add a keybinding that maps to it. That command will manually toggle line endings indepent of the show whitespace setting.
+Yes! By default the line endings are toggled along with the "show whitespace" setting. There is also a command (with no default keybinding) called "Toggle (Show/Hide) Line Endings" that you can use from the command pallet, and you can add a keybinding that maps to it. That command will manually toggle line endings independently of the show whitespace setting.
 
 # You programmed this yourself?
 Nope, the only reason this exists is because its updated/improved fork of https://github.com/sohamkamani/code-eol
