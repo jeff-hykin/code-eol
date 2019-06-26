@@ -15,7 +15,7 @@ Just install it, and open a file.
 You can customize the color, opacity, which character is used for each kind of end-of-line, and a few other things.<br>
 Settings Example:
 ```
-        "code-eol.style" {
+        "code-eol.style": {
             "color" : "#2a3f47",
             "opacity" : 1.0
             // there are more settings that can go in here
@@ -28,16 +28,16 @@ Settings Example:
         "code-eol.returnCharacter" :"⇠",
         "code-eol.crlfCharacter"   :"↵",
         "code-eol.newlineCharacterStyle" : {
-            color: "#2a3f47",
-            opacity: 0.9
+            "color": "#2a3f47",
+            "opacity": 0.9
         },
         "code-eol.returnCharacterStyle" : {
-            color: "#2a3f47",
-            opacity: 0.9
+            "color": "#2a3f47",
+            "opacity": 0.9
         },
         "code-eol.crlfCharacterStyle" : {
-            color: "#2a3f47",
-            opacity: 0.9
+            "color": "#2a3f47",
+            "opacity": 0.9
         },
         // some other symbols you might want to use:
             // ¤
