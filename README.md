@@ -1,15 +1,14 @@
 # What is this?
 This shows newline (technically end-of-line) characters, similar to how Atom or Notepad++ do. There's also the option to show non-standard line endings as a seperate color.
 
+# How do I use it?
 Just install it, and open a file.
 
-# I just updated to V1, What's different?
-- The "returnCharacter" and "crlfCharacter" settings were accidently (originally) switched, V1 corrects that mistake but it might make your endings look different.
-- The default color is now the color of your theme whitespace!
-- The default line ending for "newlineCharacter" was changed to "¬"
-- The line endings are now toggled whenever "show whitespace" is toggled! (Enabled by default, but this behavior can be disabled)
-- Set your prefered line ending with "code-eol.validLineEnding", this will color other endings an error-color
-- Ending-specific styles are added. For example, for newline, use "code-eol.newlineCharacterStyle" to set the color, opacity, etc (see "ThemableDecorationAttachmentRenderOptions" on https://goo.gl/SYzyg8) 
+# What features does it have?
+- Lots of customization (see examples below)
+- The line endings are toggled whenever "show whitespace" is toggled (this can be disabled)
+- You can set your prefered line ending with "code-eol.validLineEnding", this will color other endings the error-color of your theme
+- Ending-specific styles are possible. For example, for newline, use "code-eol.newlineCharacterStyle" to set the color, opacity, etc (see "ThemableDecorationAttachmentRenderOptions" on https://goo.gl/SYzyg8) 
 
 # What can I customize? (Settings)
 You can customize the color, opacity, which character is used for each kind of end-of-line, and a few other things.<br>
