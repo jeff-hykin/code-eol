@@ -1,6 +1,7 @@
 # What is this?
 This shows newline (technically end-of-line) characters, similar to Atom or Notepad++. There's also the option to show display some line endings as an error-color if you want to avoid a particular kind of line ending.
 
+# How do I use it?
 Just install it, open a file, and make sure you have the `renderWhitespace` setting enabled in VS Code (toggle it with the "Toggle Render Whitespace" command in the command pallet).
 
 # What can I customize? (Settings)
@@ -13,9 +14,9 @@ Settings Example:
             // there are more settings that can go in here
             // see "ThemableDecorationAttachmentRenderOptions" on https://goo.gl/SYzyg8
         },
+        "code-eol.toggleWithWhiteSpace": true,
         // "code-eol.validLineEnding": "LF"  , // (optional) this makes "CRLF" endings render as error-color
         // "code-eol.validLineEnding": "CRLF", // (optional) this makes "LF" endings render as error-color
-        "code-eol.toggleWithWhiteSpace": true,
         "code-eol.newlineCharacter":"¬",
         "code-eol.returnCharacter" :"⇠",
         "code-eol.crlfCharacter"   :"↵",
