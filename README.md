@@ -1,15 +1,7 @@
 # What is this?
-This shows newline (technically end-of-line) characters, similar to how Atom or Notepad++ do. There's also the option to show non-standard line endings as a seperate color.
+This shows newline (technically end-of-line) characters, similar to Atom or Notepad++. There's also the option to show display some line endings as an error-color if you want to avoid a particular kind of line ending.
 
-Just install it, and open a file.
-
-# I just updated to V1, What's different?
-- The "returnCharacter" and "crlfCharacter" settings were accidently (originally) switched, V1 corrects that mistake but it might make your endings look different.
-- The default color is now the color of your theme whitespace!
-- The default line ending for "newlineCharacter" was changed to "¬"
-- The line endings are now toggled whenever "show whitespace" is toggled! (Enabled by default, but this behavior can be disabled)
-- Set your prefered line ending with "code-eol.validLineEnding", this will color other endings an error-color
-- Ending-specific styles are added. For example, for newline, use "code-eol.newlineCharacterStyle" to set the color, opacity, etc (see "ThemableDecorationAttachmentRenderOptions" on https://goo.gl/SYzyg8) 
+Just install it, open a file, and make sure you have the `renderWhitespace` setting enabled in VS Code (toggle it with the "Toggle Render Whitespace" command in the command pallet).
 
 # What can I customize? (Settings)
 You can customize the color, opacity, which character is used for each kind of end-of-line, and a few other things.<br>
@@ -60,6 +52,20 @@ Settings Example:
         // see more at https://unicode-table.com/en/sets/arrows-symbols/
 ```
 <!-- <img width="376" src="https://github.com/jeff-hykin/code-eol/blob/master/Screen Shot 2018-05-07 at 11.41.35 PM.png"> -->
+
+
+# I only want to see line endings, not spaces!
+Cool! You can totally do that. First disable the `renderWhitespace` in settings, then call the "Toggle (Show/Hide) Line Endings" command in the command pallet. You'll also want to add `"code-eol.toggleWithWhiteSpace": false,` to your settings file encase you later decide to enable `renderWhitespace`.
+
+# Even after toggling, I don't see any line endings??
+If you've toggled "Toggle Render Whitespace" and "Toggle (Show/Hide) Line Endings" and still nothing shows up, it could be an issue with your theme. But! you can avoid this problem by manually setting the color. Add the following to your settings and then try the "Toggle (Show/Hide) Line Endings" again.
+```
+"code-eol.style": {
+    "color" : "#f55742",
+    "opacity" : 1.0
+},
+```
+The line endings should now be displayed as a bright red (just to indicat that it is working). If its not bright red for you, then please create a new issue on the GitHub repo here: https://github.com/jeff-hykin/code-eol
 
 # Can I toggle line endings with a keybinding?
 Yes! By default the line endings are toggled along with the "show whitespace" setting. There is also a command (with no default keybinding) called "Toggle (Show/Hide) Line Endings" that you can use from the command pallet, and you can add a keybinding that maps to it. That command will manually toggle line endings independently of the show whitespace setting.
