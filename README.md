@@ -1,8 +1,8 @@
 # What is this?
-This shows newline (technically end-of-line) characters, similar to Atom or Notepad++. There's also the option to show display some line endings as an error-color if you want to avoid a particular kind of line ending.
+This shows newline (technically end-of-line) characters, similar to Atom or Notepad++. There's also the option to show some line endings with an error-color if you want to avoid a particular kind of line ending.
 
 # How do I use it?
-Just install it, open a file, and make sure you have the `renderWhitespace` setting enabled in VS Code (toggle it with the "Toggle Render Whitespace" command in the command pallet).
+Just install it, open a file, and make sure you have the `renderWhitespace` setting enabled in VS Code (toggle it with the "Toggle Render Whitespace" command in the command pallet). If you don't want spaces to be displayed, use the "Toggle (Show/Hide) Line Endings" command instead of "Toggle Render Whitespace". (You'll also want to add `"code-eol.toggleWithWhiteSpace": false,` to your settings file encase you later decide to enable `renderWhitespace`)
 
 # What can I customize? (Settings)
 You can customize the color, opacity, which character is used for each kind of end-of-line, and a few other things.<br>
@@ -54,12 +54,8 @@ Settings Example:
 ```
 <!-- <img width="376" src="https://github.com/jeff-hykin/code-eol/blob/master/Screen Shot 2018-05-07 at 11.41.35 PM.png"> -->
 
-
-# I only want to see line endings, not spaces!
-Cool! You can totally do that. First disable the `renderWhitespace` in settings, then call the "Toggle (Show/Hide) Line Endings" command in the command pallet. You'll also want to add `"code-eol.toggleWithWhiteSpace": false,` to your settings file encase you later decide to enable `renderWhitespace`.
-
 # Even after toggling, I don't see any line endings??
-If you've toggled "Toggle Render Whitespace" and "Toggle (Show/Hide) Line Endings" and still nothing shows up, it could be an issue with your theme. But! you can avoid this problem by manually setting the color. Add the following to your settings and then try the "Toggle (Show/Hide) Line Endings" again.
+If you've toggled "Toggle (Show/Hide) Line Endings" and still nothing shows up, it could be an issue with your theme. But! you can avoid this problem by manually setting the color. Add the following to your settings and then try the "Toggle (Show/Hide) Line Endings" again.
 ```
 "code-eol.style": {
     "color" : "#f55742",
