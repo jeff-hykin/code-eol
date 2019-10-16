@@ -2,7 +2,7 @@
     "name": "code-eol",
     "displayName": "code-eol 2019 (Line Endings)",
     "description": "Displays line endings like Atom/Notepad",
-    "version": "1.0.9",
+    "version": "1.0.10",
     "icon": "icon.png",
     "publisher": "jeff-hykin",
     "repository": {
@@ -13,11 +13,12 @@
         "vscode": "^1.15.0"
     },
     "keywords": [
+        "code",
+        "eol",
         "line endings",
         "line ending",
         "line",
         "endings",
-        "eol",
         "lf",
         "crlf",
         "render crlf",
