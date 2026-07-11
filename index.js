@@ -12,7 +12,7 @@ let whitespaceWasActive = null
 const mainDecoration = vscode.window.createTextEditorDecorationType({})
 let activeEditor
 let globalState
-// the pattern to find the differnt line endings
+// the pattern to find the different line endings
 const endOfLinePattern = /\r\n|\n|\r/g
 let match
 let theRenderOption
@@ -99,7 +99,7 @@ function updateSettings() {
 
 
 // 
-// this method is called when vs code is initally opened
+// this method is called when vs code is initially opened
 // 
 exports.activate = function activate(context) {
     // set the active editor
@@ -133,7 +133,7 @@ exports.activate = function activate(context) {
     vscode.window.onDidChangeActiveTextEditor(updateDecorations, null, context.subscriptions)
 
     // 
-    // when the user changes settings, update the color varaibles
+    // when the user changes settings, update the color variables
     // 
     vscode.workspace.onDidChangeConfiguration(() => {
         updateSettings()
@@ -152,7 +152,7 @@ function updateDecorations(editor) {
     
     // if this called by onDidChangeTextDocument(), 
     // then the text string will only be the text that changed
-    // (it wont be the text of the entire file)
+    // (it won't be the text of the entire file)
     const document = activeEditor.document
     const text = document.getText()
     const newLines = []
@@ -199,4 +199,3 @@ vscode.commands.registerCommand('extension.toggleLineEndings', () => {
         globalState.update("codeEolIsDisabled", isDisabled)
     }
 })
-
