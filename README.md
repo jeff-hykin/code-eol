@@ -5,7 +5,7 @@ This shows newline (technically end-of-line) characters, similar to Atom or Note
 Just install it, open a file, and make sure you have the `renderWhitespace` setting enabled in VS Code (toggle it with the "Toggle Render Whitespace" command in the command pallet). If you don't want spaces to be displayed, use the "Toggle (Show/Hide) Line Endings" command instead of "Toggle Render Whitespace". (You'll also want to add `"code-eol.toggleWithWhiteSpace": false,` to your settings file encase you later decide to enable `renderWhitespace`)
 
 # Its not working! (Even after toggling)
-Some themes have a transparent (or 99% transparent) whitespace color, so the endings might be colored... they're just colored invisble. You can manually override that theme-color by putting this in your settings:
+Some themes have a transparent (or 99% transparent) whitespace color, so the endings might be colored... they're just colored invisible. You can manually override that theme-color by putting this in your settings:
 ```
 "workbench.colorCustomizations": {
     "editorWhitespace.foreground": "#d1d41b" // whatever hex color you want
@@ -90,4 +90,4 @@ This fork:
 Then post a bug/feature request!<br>
 (to do that just create an issue on github: https://github.com/jeff-hykin/code-eol)<br>
 The opacity setting, character-specific styles, and the toggle command were created because people on GitHub asked.<br>
-NOTE: It might take me awhile to repond on GitHub (I only maintain this in my free time), but I will respond.
+NOTE: It might take me awhile to respond on GitHub (I only maintain this in my free time), but I will respond.
